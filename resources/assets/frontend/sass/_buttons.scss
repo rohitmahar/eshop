@@ -1,0 +1,204 @@
+.e-btn {
+  border-radius: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: rgba(0,0,0,0);
+  font-size:12px;
+}
+.add-to-cart {
+  border: 1px solid #3b5998;
+}
+.add-to-cart:hover, .send-to-cart:hover {
+  background-color: #3b5998;
+  color: #f5f5f5;
+  border: 1px solid #3b5998;
+}
+.detail-view {
+  border: 1px solid #3b5998;
+  color: #f5f5f5;
+  background-color: #3b5998;
+}
+.discount-view {
+  border: rgba(0,0,0,0.2);
+  color: #30676D;
+  background-color: #E8EB82;
+}
+.detail-view:hover {
+  color: #efefef;
+}
+.cat-button{
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #9E9C9C;
+  color: #9E9C9C;
+  margin: 5px;
+}
+.cat-button:hover{
+  background-color: #f5f5f5;
+  color: #2a2d34;
+  border:0;
+}
+.send-to-cart {
+  border-radius: 0;
+  padding: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background: #3b5998;
+  font-size:14px;
+  border: none;
+  color: #ebf4f8;
+}
+.page-btn {
+  border-radius: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.order-btn {
+  margin: 30px 10px;
+  width: 210px;
+  color: #f5f5f5;
+  background-color: #3b5998;
+  padding: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  opacity: 0.8;
+}
+.order-btn:hover {
+  opacity: 1;
+}
+.icon-right {
+  padding-left:30px;
+}
+
+.contact-form input[type=submit] {
+  border:none;
+  color: #ffffff;
+  padding: 13px 43px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  background:#3b5998;
+}
+.contact-form input[type=submit]:hover {
+  background:#000;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -o-transition: .5s all;
+  -ms-transition: .5s all;
+  -moz-transition: .5s all;
+}
+.btn {
+  border-radius: 0;
+}
+/* Demo */
+
+.flex-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Color Variables */
+$color-github: #4284c0;
+$color-twitter: #2b97f1;
+$color-facebook: #3b5a9b;
+
+/* Social Icon Mixin */
+@mixin social-icon($color) {
+  background: $color;
+  background: linear-gradient(tint($color, 5%), shade($color, 5%));
+  border-bottom: 1px solid shade($color, 20%);
+  color: tint($color, 50%);
+
+  &:hover {
+    color: tint($color, 80%);
+    text-shadow: 0px 1px 0px shade($color, 20%);
+  }
+
+  .tooltip {
+    background: $color;
+    background: linear-gradient(tint($color, 15%), $color);
+    color: tint($color, 80%);
+
+    &:after {
+      border-top-color: $color;
+    }
+  }
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: #fff;
+
+    .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, -150%);
+    }
+  }
+
+  &:active {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+  }
+
+  &--twitter { @include social-icon($color-twitter); }
+  &--facebook { @include social-icon($color-facebook); }
+  &--github { @include social-icon($color-github); }
+
+  i {
+    position: relative;
+    top: 1px;
+  }
+}
+
+/* Tooltips */
+.tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(-50%, -100%);
+  transition: all 0.3s ease;
+  z-index: 1;
+
+  &:after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    border: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: transparent;
+    transform: translate(-50%, 100%);
+  }
+}
+.cart-remove-btn {
+  font-size: 8px;
+  padding: 2px 3px;
+}
